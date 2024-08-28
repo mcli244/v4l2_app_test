@@ -15,14 +15,14 @@ fi
 
 if [ $1 == "arm" ]; then
     echo "arch:arm"
-    export CXX=arm-linux-gnueabi-g++
-    export CC=arm-linux-gnueabi-gcc
-    export LD=arm-linux-gnueabi-ld
-    export OBJCOPY=arm-linux-gnueabi-objcopy
-    export OBJDUMP=arm-linux-gnueabi-objdump
-    export AR=arm-linux-gnueabi-ar
-    export STRIP=arm-linux-gnueabi-strip
-    export RANLIB=arm-linux-gnueabi-ranlib
+    # export CXX=arm-linux-gnueabihf-g++
+    export CC=arm-linux-gnueabihf-gcc
+    export LD=arm-linux-gnueabihf-ld
+    export OBJCOPY=arm-linux-gnueabihf-objcopy
+    export OBJDUMP=arm-linux-gnueabihf-objdump
+    export AR=arm-linux-gnueabihf-ar
+    export STRIP=arm-linux-gnueabihf-strip
+    export RANLIB=arm-linux-gnueabihf-ranlib
     
     export build_dir=build_$1
 
@@ -49,6 +49,6 @@ else
     mkdir ${build_dir}
 fi
 cd ${build_dir}
-cmake ..
+cmake .. 
 make
 
